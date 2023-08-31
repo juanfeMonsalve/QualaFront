@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Aspectos a mejorar
+envio de mensajes a usuario para avisar cuando guardo actualizo o elimino algo
+Validacion antes de eliminar
+
+## Configuracion
+Para cambiar el localhost al que apunta o el puerto se debe ir a la carpta utils/contasn alli se aparace esta configuracion
