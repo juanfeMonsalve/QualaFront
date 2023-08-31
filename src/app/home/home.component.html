@@ -1,0 +1,33 @@
+<p class="text-center fs-3 fw-medium text-primary">¡Sucursales Quala!</p>
+
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="orquestadorModal(true)" ><i class="bi bi-plus-lg"></i></button>
+</div>
+<table class="table" *ngIf="listSucursales">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Identificacion</th>
+        <th scope="col">Fecha creacion</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listSucursales">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.direccion}}</td>
+        <td>{{item.identificacion}}</td>
+        <td>{{item.fechaCreacion}}</td>
+        <td>{{item.moneda}}</td>
+        <td><button class="btn btn-warning"data-toggle="modal" data-target="#exampleModal" (click)="orquestadorModal(false,item)"><i class="bi bi-eye-fill"></i></button>
+        <button class="btn btn-danger ml-6" (click)="deleteSucursal(item)"><i class="bi bi-file-earmark-x"></i></button>
+    </td>
+      </tr>
+    </tbody>
+  </table>
+<app-modal [createBool]="createBool" [item]="item" (save)="recibirEvent($event)"></app-modal>
